@@ -1,5 +1,5 @@
 
-#### cpe:{part}:{vendor}:{product}:{version}
+# cpe:{part}:{vendor}:{product}:{version}
 
 
 ## Part
