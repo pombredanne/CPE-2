@@ -253,12 +253,14 @@
 			"script": "jspwiki",
 			"html": "<html[^>]* xmlns:jspwiki="
 		},
-		"Apache Tomcat": {
+		"tomcat": {
+			"vendor": "apache",
 			"website": "tomcat.apache.org",
 			"cats": [ 22 ],
 			"headers": { "Server": "Apache-Coyote(/1\\.1)?\\;version:\\1?4.1+:" }
 		},
-		"Apache Traffic Server": {
+		"Traffic_Server": {
+			"vendor": "apache",
 			"website": "trafficserver.apache.org/",
 			"cats": [ 22 ],
 			"headers": { "Server": "ATS/?([\\d.]+)?\\;version:\\1" }
@@ -913,6 +915,7 @@
 			"html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) \\{)\\;version:\\1"
 		},
 		"Drupal": {
+			"vendor": "drupal",
 			"website": "drupal.org",
 			"cats": [ 1 ],
 			"script": "drupal\\.js",
@@ -1645,6 +1648,7 @@
 			"env": "^jQT$"
 		},
 		"jQuery": {
+			"vendor": "jquery",
 			"website": "jquery.com",
 			"cats": [ 12 ],
 			"script": [ "jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ],
@@ -3059,6 +3063,7 @@
 			"script": "spin(?:\\.min)?\\.js"
 		},
 		"SPIP": {
+			"vendor": "spip",
 			"website": "www.spip.net",
 			"cats": [ 1 ],
 			"meta": { "generator": "(^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1" },
@@ -3085,7 +3090,8 @@
 			"headers": { "X-ServedBy": "squarespace" },
 			"env": "^Squarespace"
 		},
-		"Squiz Matrix": {
+		"mysource_matrix": {
+			"vendor": "squiz",
 			"website": "squiz.net",
 			"cats": [ 1 ],
 			"meta": { "generator": "Squiz Matrix" },
@@ -3122,7 +3128,8 @@
 			"script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
 			"env": "^sublimevideo$"
 		},
-		"Subrion": {
+		"subrion_cms": {
+			"vendor": "intelliants",
 			"website": "subrion.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "^Subrion " },

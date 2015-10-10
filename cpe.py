@@ -20,6 +20,9 @@ class CPE:
         self.cursor.close()
         self.conn.close()
 
+    def commitdb(self):
+        self.conn.commit()
+
     def initdb(self):
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS CPE
             (
@@ -35,9 +38,6 @@ class CPE:
         self.cursor.execute("INSERT INTO CPE (part, vendor, product, version) VALUES (%s, %s, %s, %s)",
                             (part, vendor, product, version))
 
-    def commitdb(self):
-        self.conn.commit()
-
     def load_remote_xml(self):
         soup = BeautifulSoup(urllib2.urlopen(
             self.xmllocation),
@@ -47,9 +47,12 @@ class CPE:
             mcpe = tag["name"].split(":")
             (part, vendor, product, version) = (mcpe[1], mcpe[2], mcpe[3], mcpe[4])
             self.insert_cpe(part, vendor, product, version)
-            # print part + ":" + vendor + ":" + product + ":" + version
+            # print CPE.tostring(part, vendor, product, version)
         self.commitdb()
 
+    @staticmethod
+    def tostring(part, vendor, product, version):
+        return part + ":" + vendor + ":" + product + ":" + version
 
 if "__main__" == __name__:
     cpe = CPE()
